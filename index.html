@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Din meny</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="add-to-menu">
+    <form v-on:submit.prevent="addDish">
+        <label for="new-dish">Add a new dish to your menu</label>
+        <input
+            v-model="newDishText"
+            id="new-dish"
+            placeholder="Write here">
+
+        <select v-model="selectedDay"
+                id="new-dish">
+            <option disabled value="">Please select one</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+        </select>
+
+        <!--<label for="new-day">Choose weekday</label>
+        <input
+                v-model="newDayText"
+                id="new-day"
+                placeholder="Write here">-->
+
+        <button>Add your dish</button>
+        <span>Selected: {{newDishText}} - {{ selectedDay }}</span>
+        <hr id="line">
+
+    </form>
+    <ul>
+        <li
+                is="dish-item"
+                v-for="(dish, index) in dishes"
+                v-bind:key="dish.id"
+                v-bind:title="dish.title"
+                v-on:remove="dishes.splice(index, 1)"
+
+        ></li>
+    </ul>
+</div>
+
+<script	src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="js/js-meny.js"></script>
+</body>
+</html>
