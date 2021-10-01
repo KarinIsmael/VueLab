@@ -2,8 +2,25 @@ body{
     background-color: #ccc;
     background-image: url("../img/paper.jpg");
     background-blend-mode: screen;
+    scrollbar-base-color: aqua;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-content: center;
 }
 
 #add-to-menu{
-    background: burlywood;
+    background: pink;
 }
+
+#new-dish{
+}
+
+
+
+/*
+desktop
+
+body{
+padding-left: 200px;
+    padding-right: 200px;
+    }*/

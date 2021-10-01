@@ -1,11 +1,12 @@
 Vue.component('dish-item', {
     template: `
     <li>
-    {{ title }} - {{selectedDay}}
+    {{ title }} - {{selected}}
     <button v-on:click="$emit('remove')">Remove</button>
+    <button v-on:click="$emit('missi')">Missing ingredient</button>
 </li>
     `,
-    props: ['title']
+    props: ['title', 'selected',]
 })
 
 new Vue({
@@ -27,9 +28,15 @@ new Vue({
             this.dishes.push({
                 id: this.nextDishId++,
                 title: this.newDishText,
+                selected: this.selectedDay
+
             })
             this.newDishText = ''
 
+        },
+        miss: function (){
+            this.newDishText.toUpperCase()
         }
+
     }
 })

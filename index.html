@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Din meny</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -20,7 +20,7 @@
 
         <select v-model="selectedDay"
                 id="new-dish">
-            <option disabled value="">Please select one</option>
+            <option disabled value="">Please select day</option>
             <option>Monday</option>
             <option>Tuesday</option>
             <option>Wednesday</option>
@@ -35,8 +35,10 @@
                 placeholder="Write here">-->
 
         <button>Add your dish</button>
+        <p></p>
         <span>Selected: {{newDishText}} - {{ selectedDay }}</span>
         <hr id="line">
+        <hr>
 
     </form>
     <ul>
@@ -44,9 +46,10 @@
                 is="dish-item"
                 v-for="(dish, index) in dishes"
                 v-bind:key="dish.id"
-                v-bind:title="dish.title"
+                v-bind:title="dish.title/* + ' ' + dish.selected*/"
+                v-bind:selected="dish.selected"
                 v-on:remove="dishes.splice(index, 1)"
-
+                v-on:missi="dish.title.toUpperCase()"
         ></li>
     </ul>
 </div>
