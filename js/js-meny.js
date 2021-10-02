@@ -2,11 +2,12 @@ Vue.component('dish-item', {
     template: `
     <li>
     {{ title }} - {{selected}}
-    <button v-on:click="$emit('remove')">Remove</button>
-    <button v-on:click="$emit('missi')">Missing ingredient</button>
+    <button id="remove-button" class="button" v-on:click="$emit('remove')">Remove</button>
+<!--<button id="missing-button" class="button" v-on:click="$emit('toggleclass')">Missing ingredient</button>-->
+     <hr class="line">
 </li>
     `,
-    props: ['title', 'selected',]
+    props: ['title', 'selected', 'toggleClass']
 })
 
 new Vue({
@@ -14,6 +15,8 @@ new Vue({
     data: {
         newDishText: '',
         selectedDay: '',
+        color: '',
+        isActive: true,
         dishes: [
             {
                 id: 1,
@@ -34,8 +37,8 @@ new Vue({
             this.newDishText = ''
 
         },
-        miss: function (){
-            this.newDishText.toUpperCase()
+        toggle: function(){
+            this.isActive = !this.isActive;
         }
 
     }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Din meny</title>
@@ -10,16 +10,19 @@
 </head>
 <body>
 
+<h1 id="head">Dish Manager</h1>
+
 <div id="add-to-menu">
     <form v-on:submit.prevent="addDish">
-        <label for="new-dish">Add a new dish to your menu</label>
+        <label id="dishHeader" for="new-dish">Add a new dish to your menu</label>
         <input
             v-model="newDishText"
             id="new-dish"
             placeholder="Write here">
 
-        <select v-model="selectedDay"
-                id="new-dish">
+        <select
+                v-model="selectedDay"
+                id="new-day">
             <option disabled value="">Please select day</option>
             <option>Monday</option>
             <option>Tuesday</option>
@@ -34,11 +37,11 @@
                 id="new-day"
                 placeholder="Write here">-->
 
-        <button>Add your dish</button>
+        <button id="add-button">Add your dish</button>
         <p></p>
-        <span>Selected: {{newDishText}} - {{ selectedDay }}</span>
-        <hr id="line">
-        <hr>
+        <span id="selection">Selected: {{newDishText}} - {{ selectedDay }}</span>
+        <hr class="line">
+        <hr class="line">
 
     </form>
     <ul>
@@ -48,10 +51,13 @@
                 v-bind:key="dish.id"
                 v-bind:title="dish.title/* + ' ' + dish.selected*/"
                 v-bind:selected="dish.selected"
+                v-bind:style='{"color" : (isActive? "black" : "red" )}'
                 v-on:remove="dishes.splice(index, 1)"
-                v-on:missi="dish.title.toUpperCase()"
+                v-on:toggle="isActive= false"
         ></li>
+        <button id="change-button" class="button" v-on:click="toggle">change</button>
     </ul>
+<!--    <button id="mark" v-on:click="miss(index)">Mark</button>-->
 </div>
 
 <script	src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

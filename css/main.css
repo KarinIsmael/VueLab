@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Arbutus+Slab&family=DM+Sans:wght@500&display=swap');
+
+
 body{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
     background-color: #ccc;
     background-image: url("../img/paper.jpg");
     background-blend-mode: screen;
@@ -8,19 +13,106 @@ body{
     align-content: center;
 }
 
+#head{
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+}
+
+#dishHeader{
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 20px;
+    border-radius: 5px;
+    margin-bottom: 3px;
+}
+#dayHeader{
+    font-size: 15px;
+    font-weight: bold;
+    display: inline;
+    padding-left: 20px;
+    border-radius: 5px;
+    margin-bottom: 3px;
+}
+
 #add-to-menu{
     background: pink;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 #new-dish{
+    padding-left: 20px;
+    border-radius: 5px;
+    margin-bottom: 3px;
+}
+#new-day{
+    padding-left: 20px;
+    border-radius: 5px;
 }
 
+#add-button{
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px #cccccc;
+}
+
+#selection{
+    margin-left: 35px;
+}
+
+#remove-button{
+    border-radius: 5px;
+    margin-right: 5px;
+    box-shadow: 3px 3px #cccccc;
+}
+
+#missing-button{
+    border-radius: 5px;
+    margin-right: 5px;
+    box-shadow: 3px 3px #cccccc;
+}
+
+#change-button{
+    border-radius: 5px;
+    margin-right: 5px;
+    box-shadow: 3px 3px #cccccc;
+}
+
+.button{
+    display: flex;
+}
+
+#mark{
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 3px 3px #cccccc;
+}
+
+.line{
+    color: black;
+    background-color: black;
+    height: 1px;
+    width: 95%;
+}
+
+
+
+@media screen and (min-width: 786px) and (max-width: 1024px){
+
+}
 
 
 /*
 desktop
+*/
 
-body{
-padding-left: 200px;
-    padding-right: 200px;
-    }*/
+@media screen and (min-width: 1025px) {
+    body {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+}
