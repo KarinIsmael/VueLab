@@ -52,20 +52,27 @@ new Vue({
         message: '',
         feedback: false,
         text: '',
-        returntext: '',
+        returnText: '',
     },
     methods: {
 
         addRating: function (){
             if (this.rateText === '5'){
-                {{this.message='Tack för det fina betyget!'}}
+                {{this.message='Allt gick bra denna vecka, bra jobbat!'}}
             }else{
-                this.message='Vad kan vi förbättra?'
+                this.message='Vad kunde förbättras?'
                 this.feedback= true;
             }
         },
         message2: function (){
-            this.returntext='Tack!'
+            this.returnText='Tack!'
         }
     }
 })
+
+const d = new Date();
+let year = d.getFullYear();
+let mont = d.getMonth();
+let day = d.getDate();
+let thisDate = day + " / " +mont +" "+year;
+document.getElementById("date").innerHTML = thisDate;
