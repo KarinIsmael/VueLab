@@ -7,7 +7,7 @@ Vue.component('dish-item', {
      <hr class="line">
 </li>
     `,
-    props: ['title', 'selected', 'toggleClass']
+    props: ['title', 'selected']
 })
 
 new Vue({
@@ -17,6 +17,7 @@ new Vue({
         selectedDay: '',
         color: '',
         isActive: true,
+        rateText: '',
         dishes: [
             {
                 id: 1,
@@ -41,5 +42,30 @@ new Vue({
             this.isActive = !this.isActive;
         }
 
+    }
+})
+
+new Vue({
+    el: '#comment-section',
+    data: {
+        rateText: '',
+        message: '',
+        feedback: false,
+        text: '',
+        returntext: '',
+    },
+    methods: {
+
+        addRating: function (){
+            if (this.rateText === '5'){
+                {{this.message='Tack för det fina betyget!'}}
+            }else{
+                this.message='Vad kan vi förbättra?'
+                this.feedback= true;
+            }
+        },
+        message2: function (){
+            this.returntext='Tack!'
+        }
     }
 })

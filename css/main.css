@@ -47,16 +47,22 @@ body{
     padding-left: 20px;
     border-radius: 5px;
     margin-bottom: 3px;
+    margin-left: 10px;
 }
 #new-day{
     padding-left: 20px;
     border-radius: 5px;
+    border-style: solid;
+    margin-left: 10px;
 }
 
 #add-button{
     margin-top: 10px;
     border-radius: 5px;
-    box-shadow: 3px 3px #cccccc;
+    box-shadow: 3px 3px #f3ebf5;
+    color: purple;
+    background-color: lavenderblush;
+    margin-left: 30px;
 }
 
 #selection{
@@ -66,19 +72,25 @@ body{
 #remove-button{
     border-radius: 5px;
     margin-right: 5px;
-    box-shadow: 3px 3px #cccccc;
+    box-shadow: 3px 3px #f3ebf5;
+    color: purple;
+    background-color: lavenderblush;
 }
 
 #missing-button{
     border-radius: 5px;
     margin-right: 5px;
-    box-shadow: 3px 3px #cccccc;
+    box-shadow: 3px 3px #f3ebf5;
+    color: purple;
+    background-color: lavenderblush;
 }
 
 #change-button{
     border-radius: 5px;
     margin-right: 5px;
-    box-shadow: 3px 3px #cccccc;
+    box-shadow: 3px 3px #f3ebf5;
+    color: purple;
+    background-color: lavenderblush;
 }
 
 .button{
@@ -93,26 +105,80 @@ body{
 }
 
 .line{
-    color: black;
-    background-color: black;
+    color: purple;
+    background-color: purple;
+    border-radius: 2px;
     height: 1px;
     width: 95%;
 }
 
-
-
-@media screen and (min-width: 786px) and (max-width: 1024px){
-
+#comment-section{
+    background-color: lavender;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
+#rating-button{
+    border-radius: 5px;
+    margin-right: 5px;
+    box-shadow: 3px 3px #f3ebf5;
+    color: purple;
+    background-color: lavenderblush;
+}
 
-/*
-desktop
-*/
+.rate{
+    margin-top: 10px;
+}
 
-@media screen and (min-width: 1025px) {
-    body {
-        padding-left: 200px;
-        padding-right: 200px;
+#rating{
+    margin-top: 20px;
+}
+#new-rating{
+    padding-left: 20px;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    width: 70%;
+}
+#review{
+    padding-left: 20px;
+    border-radius: 5px;
+    margin-bottom: 3px;
+}
+#feedbackButton{
+    border-radius: 5px;
+    margin-right: 5px;
+    box-shadow: 3px 3px #f3ebf5;
+    color: purple;
+    background-color: lavenderblush;
+}
+
+@media screen and (min-width: 786px) and (max-width: 1024px) {
+
+    #new-rating {
+        padding-left: 20px;
+        border-radius: 5px;
+        margin-bottom: 3px;
+        width: 50%;
+    }
+
+    #add-button{
+        display: inline;
     }
 }
+
+
+    /*
+    desktop
+    */
+    @media screen and (min-width: 1025px) {
+        body {
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+
+        #add-button{
+            display: inline;
+        }
+    }
+

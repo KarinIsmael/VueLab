@@ -55,9 +55,26 @@
                 v-on:remove="dishes.splice(index, 1)"
                 v-on:toggle="isActive= false"
         ></li>
-        <button id="change-button" class="button" v-on:click="toggle">change</button>
+        <button id="change-button" class="button" v-on:click="toggle">Change</button>
     </ul>
 <!--    <button id="mark" v-on:click="miss(index)">Mark</button>-->
+</div>
+
+<div id="comment-section">
+    <form v-on:submit.prevent="addRating">
+        <label id="rating" class="rate" for="new-rating">Rate this week</label>
+        <input v-model="rateText" id="new-rating" class="rate"
+        placeholder="Write a number from 1-5">
+        <button id="rating-button" class="rate">Submit</button>
+            <p id="message">{{message}}</p>
+    </form>
+
+    <form v-if="feedback">
+        <label id="feedbackline" class="reviewtext" for="review">Skriv din feedback här</label>
+        <input v-model="text" id="review">
+        <button id="feedbackButton" class="rate" v-on:submit.prevent="message2">Submit</button>
+    </form>
+
 </div>
 
 <script	src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
